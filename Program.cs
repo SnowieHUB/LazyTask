@@ -9,7 +9,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.BackgroundColor = ConsoleColor.White;
         bool loop = true;
         
         while (loop)
