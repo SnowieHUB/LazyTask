@@ -16,23 +16,41 @@ public class MainMenu
           |                                                                    |
           +--------------------------------------------------------------------+
          */
-        
-        Console.SetWindowPosition((Console.WindowWidth / 2) - (Console.WindowWidth / 2),Console.CursorTop);
-        Console.Clear();
-        Console.ForegroundColor = ConsoleColor.DarkCyan;
-        Console.WriteLine(@"+--------------------------------------------------------------------+");
-        Console.WriteLine(@"|                                                                    |");
-        Console.WriteLine(@"| ██╗      █████╗ ███████╗██╗   ██╗████████╗ █████╗ ███████╗██╗  ██╗ |");
-        Console.WriteLine(@"| ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝ |");
-        Console.WriteLine(@"| ██║     ███████║  ███╔╝  ╚████╔╝    ██║   ███████║███████╗█████╔╝  |");
-        Console.WriteLine(@"| ██║     ██╔══██║ ███╔╝    ╚██╔╝     ██║   ██╔══██║╚════██║██╔═██╗  |");
-        Console.WriteLine(@"| ███████╗██║  ██║███████╗   ██║      ██║   ██║  ██║███████║██║  ██╗ |");
-        Console.WriteLine(@"| ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ |");
-        Console.WriteLine(@"|                                             Made by @RP            |");
-        Console.WriteLine(@"+--------------------------------------------------------------------+");
-        Console.ResetColor();
-    }
 
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
+        string banner = @"
+
+
+          +--------------------------------------------------------------------+
+          |                                                                    |
+          | ██╗      █████╗ ███████╗██╗   ██╗████████╗ █████╗ ███████╗██╗  ██╗ |
+          | ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝ |
+          | ██║     ███████║  ███╔╝  ╚████╔╝    ██║   ███████║███████╗█████╔╝  |
+          | ██║     ██╔══██║ ███╔╝    ╚██╔╝     ██║   ██╔══██║╚════██║██╔═██╗  |
+          | ███████╗██║  ██║███████╗   ██║      ██║   ██║  ██║███████║██║  ██╗ |
+          | ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ |
+          |                                                                    |
+          +--------------------------------------------------------------------+
+
+                                                            Made by @RP
+
+
+        ";
+        using (StringReader reader = new StringReader(banner))
+        {
+            string line = string.Empty;
+            do
+            {
+                line = reader.ReadLine();
+                if (line != null)
+                {
+                    Console.SetCursorPosition((Console.WindowWidth - line.Length) / 2, Console.CursorTop);
+                    Console.WriteLine(line);
+                }
+            }while (line != null);
+        }
+    }
+    
     public static void Menu()
     {
         ConsoleKeyInfo userInput = Console.ReadKey();
@@ -66,7 +84,9 @@ public class MainMenu
     {
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.Write($"Add new task"); Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write($"                                     n\n"); Console.ResetColor();
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.Write($"Remove a Task"); Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write($"                                    r\n"); Console.ResetColor();
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.Write($"Quit"); Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write($"                                             q\n"); Console.ResetColor();
         Console.WriteLine();
     }

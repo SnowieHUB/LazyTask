@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlTypes;
+using System.Security.Cryptography;
 using System.Security.Principal;
 
 namespace LazyTask;
@@ -12,6 +13,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.Title = "LazyTask";
         bool loop = true;
         while (loop)
         {
