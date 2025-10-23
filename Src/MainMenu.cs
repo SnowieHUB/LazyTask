@@ -83,6 +83,7 @@ public class MainMenu
 
     public static void AddnewTask()
     {
+        DateTime now = DateTime.Now;
         Console.Clear();
         string Taskpage = $"=== Add new Task ===";
         string taskguide = "To skip adding task just press enter.";
@@ -102,7 +103,7 @@ public class MainMenu
                 loop = false;
                 break;
             }
-            Program.taskitems.Add(input);
+            Program.taskitems.Add($"{input}: {now}");
             Console.WriteLine($"Do you want to add another task? [Y/N]");
             string answer = Console.ReadLine();
             if (answer.ToLower() == "n")

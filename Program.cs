@@ -9,8 +9,18 @@ public class GetINFO
 {
     public string name {get; set;}
     public string version {get; set;}
+    public string Title { get; set; } = string.Empty;
+    public string? Description { get; set; }
+    public DateTime? DueDate { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public Guid Id { get; set; } =  Guid.NewGuid();
 }
 
+public class TaskStatus
+{
+    public enum Status {New = 0, Active = 1, Done = 2, Archived = 3 }
+    public enum Priority {Low = 0, Medium = 1, High = 2 }
+}
 public class ItemsTask
 {
     public string TaskName {get; set;}
