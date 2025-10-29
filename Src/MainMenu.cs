@@ -2,6 +2,8 @@ using System.Globalization;
 using System.Text;
 using SmallFunctions;
 using LazyTask;
+using System.Text.Json;
+
 
 namespace LazyTask;
 
@@ -80,7 +82,9 @@ public class MainMenu
                 break;
         }
     }
-
+    
+    
+    // TODO KORJAA SITEN ETTÄ SE OTTAA GETSETIN KAUTTA JA TALLENTAA SEN JSON TIEDOSTOON JA TÄMÄN LISÄKSI LISÄÄ SEN LISTAAN
     public static void AddnewTask()
     {
         DateTime now = DateTime.Now;

@@ -2,6 +2,7 @@
 using System.Security.Cryptography;
 using System.Security.Principal;
 using SmallFunctions;
+using System.Text.Json;
 
 namespace LazyTask;
 
@@ -13,16 +14,6 @@ public class GetINFO
     public DateTime? DueDate { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public Guid Id { get; set; } =  Guid.NewGuid();
-}
-
-public class TaskStatus
-{
-    public enum Status {New = 0, Active = 1, Done = 2, Archived = 3 }
-    public enum Priority {Low = 0, Medium = 1, High = 2 }
-}
-public class ItemsTask
-{
-    public string TaskName {get; set;}
 }
 class Program
 {
