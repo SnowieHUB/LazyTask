@@ -2,7 +2,6 @@ using System.Globalization;
 using System.Text;
 using SmallFunctions;
 using LazyTask;
-using MiniGameProjest;
 
 namespace LazyTask;
 
@@ -73,9 +72,6 @@ public class MainMenu
                 return;
             case "r":
                 RemoveTask();
-                return;
-            case "g":
-                minigame.gamemenu();
                 return;
             case "q":
                 Console.ForegroundColor = ConsoleColor.DarkYellow;

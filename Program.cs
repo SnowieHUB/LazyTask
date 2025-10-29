@@ -33,7 +33,7 @@ class Program
         bool loop = true;
         while (loop)
         {
-            Console.Clear();
+            //Console.Clear();
             Console.ResetColor();
             MainMenu.Banner();
             MainMenu.PrintMenu();
